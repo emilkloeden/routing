@@ -6,6 +6,7 @@ For example, in the folder structure included in this repo
 
 ```
 routes\
+ - get.py
  - users\
    - {id}\
      - get.py
@@ -19,13 +20,16 @@ a dictionary would be created with contents:
 
 ```py
 {
-   'users/{id}': {
-        'get': <function respond at 0x000001C9E3B7A680>,
-        'post': <function respond at 0x000001C9E3B7A7A0>
+    '/': {
+        'get': <function respond at 0x00000193672DA560>
     },
-    'users/{id}/job': {
-        'get': <function respond at 0x000001C9E3B7A950>,
-        'post': <function respond at 0x000001C9E3B7AB00>
+    '/users/{id}': {
+        'get': <function respond at 0x00000193672DA710>,
+        'post': <function respond at 0x00000193672DA830>
+    },
+    '/users/{id}/job': {
+        'get': <function respond at 0x00000193672DA9E0>,
+        'post': <function respond at 0x00000193672DAB90>
     }
 }
 ```

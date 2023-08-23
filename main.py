@@ -54,7 +54,9 @@ def construct_routes(
         ).as_posix()
         for filename in VALID_FILE_NAMES:
             if relative_posix_path_str.endswith(filename):
-                route = relative_posix_path_str.removesuffix(filename).removesuffix("/")
+                route = "/" + relative_posix_path_str.removesuffix(
+                    filename
+                ).removesuffix("/")
                 method = filename.removesuffix(".py")
                 if route not in routes:
                     routes[route] = {}
@@ -65,7 +67,6 @@ def construct_routes(
 def main() -> None:
     """Demo function, creates routes, then just calls the get route function for each"""
     routes = construct_routes()
-    print(routes)
     for route, methods in routes.items():
         print(f"{route}: {methods['get']('')}")
 
