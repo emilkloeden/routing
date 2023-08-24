@@ -14,6 +14,8 @@ routes\
        - get.py
        - post.py
      - post.py
+   - me \
+     - get.py
 ```
 
 a dictionary would be created with contents:
@@ -35,3 +37,14 @@ a dictionary would be created with contents:
 ```
 
 In other words, it serves as a step towards developing a folder-based request router.
+
+## "Real-world" example
+
+Check out `fastapiexample.py` for an example integrating this folder-based routing with FastAPI.
+
+Install the FastAPI dependency with `pip install fastapi[all]`
+
+Then run the example with
+`uvicorn fastapiexample:app --reload`
+
+Note that order matters when adding FastAPI routes. Thankfully it seems to work and clashes between variables and paths are resolved by the alphabetical ordering of '{' relative to letters.
